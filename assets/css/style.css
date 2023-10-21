@@ -4,13 +4,27 @@ body {
     align-items: center;
     height: 100vh;
     margin: 0;
+    font-family: 'Bookman Old Style', serif;
+    font-size: 26pt;
 }
 
+
+
+
 .container {
-    text-align: center;
-    background-color: blueviolet;
-    border-color: aqua;
-    border-top: 5mm;
+    
+    text-align:left;
+    font-family: 'Bookman Old Style', serif;
+    font-size: 14pt;
+}
+
+
+
+.row {
+    display:flexbox;
+    font-family: 'Times New Roman', serif;
+    font-size: 10pt;
+    font-weight: bolder;
 
 }
 
@@ -23,10 +37,17 @@ input {
     margin: 10px;
 }
 
-button {
-    padding: 10px 20px;
-    margin: 10px;
+
+
+.button {
+  color: white;
+  padding: 30px 40px;
+  text-align: center;
+  text-decoration: wavy;
+  display: inline-block;
+  font-size: 16px;
 }
+
 
 #weatherInfo {
     margin-top: 20px;

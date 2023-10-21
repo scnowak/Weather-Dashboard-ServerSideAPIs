@@ -39,13 +39,16 @@ function displayForecast(data) {
         forecastElement.innerHTML = `<p>Forecast not available</p>`;
     } else {
         const forecasts = data.list;
-        let forecastOutput = '<h2>5-Day Forecast</h2>';
+        let forecastOutput = '<h1>5-Day Forecast</h1>';
         for (let i = 0; i < forecasts.length; i += 8) {
             const { main, weather, dt_txt } = forecasts[i];
-            forecastOutput += `
+
+            const date = new Date(dt_txt);  //scn
+            const formattedDate = `${(date.getMonth() + 1).toString().padStart(2, '0')}/${date.getDate().toString().padStart(2, '0')}/${date.getFullYear()}`;
+            forecastOutput += `  
             
                 <div class="col forecast-item">
-                    <p>Date: ${dt_txt}</p>
+                    <p>Date: ${formattedDate}</p>
                     <p>Description: ${weather[0].description}</p>
                     <p>Temperature: ${main.temp} °F</p>
                     <p>Feels like: ${main.feels_like} °F</p>
@@ -61,3 +64,4 @@ btnEl.addEventListener('click', getWeather);
 
 
 //have to do a for loop to get my list of favorite cities searched next
+
